@@ -26,7 +26,15 @@ class GWUNetwork():
         self.layers.append(layer)
 
     def get_weights(self):
-        pass
+        """Get the weights for the model
+        
+        Returns:
+            np.array: weights of the model
+        """
+        weights = []
+        for layer in self.layers:
+            weights.append(layer.weights)
+        return np.array(weights)
 
     def compile(self, loss, lr):
         """Compile sets a model's loss function and learning rate, preparing the
