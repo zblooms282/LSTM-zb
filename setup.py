@@ -19,6 +19,8 @@ setup(name='gwu_nn',
       ],
       packages=['gwu_nn'],
       install_requires=[
-        'numpy',
+        'numpy >= 1.20',
       ],
-      zip_safe=False)
+      zip_safe=False,
+      python_requires='>=3.8'
+)
