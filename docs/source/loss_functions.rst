@@ -1,10 +1,14 @@
 Loss Functions
-===
+======================================================================
 
-.. autosummary::
-   :toctree: generated
+.. autoclass:: gwu_nn.loss_functions.LossFunction
+	:members:
 
-   Loss Functions
+.. autoclass:: gwu_nn.loss_functions.MSE
+	:members:
 
-.. automodule:: gwu_nn.loss_functions
+.. autoclass:: gwu_nn.loss_functions.LogLoss
+	:members:
+
+.. autoclass:: gwu_nn.loss_functions.CrossEntropy
 	:members:

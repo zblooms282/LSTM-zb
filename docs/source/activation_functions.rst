@@ -1,10 +1,13 @@
 Activation Functions
-===
+======================================================================
 
-.. autosummary::
-   :toctree: generated
+.. autoclass:: gwu_nn.activation_functions.ActivationFunction
 
-   Activation Functions
+.. autoclass:: gwu_nn.activation_functions.SigmoidActivation
+	:members:
 
-.. automodule:: gwu_nn.activation_functions
+.. autoclass:: gwu_nn.activation_functions.SoftmaxActivation
+	:members:
+
+.. autoclass:: gwu_nn.activation_functions.RELUActivation
 	:members:

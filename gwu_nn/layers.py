@@ -32,8 +32,12 @@ def apply_activation_backward(backward_pass):
 
 
 class Layer():
+    """The Layer layer is an abstract object used to define the template
+    for other layer types to inherit"""
 
     def __init__(self, activation=None):
+        """Because Layer is an abstract object, we don't provide any detailing
+        on the initializtion"""
         self.type = "Layer"
         if activation:
             self.activation = activation_functions[activation]()
@@ -42,14 +46,20 @@ class Layer():
 
     @apply_activation_forward
     def forward_propagation(cls, input):
+        """:noindex:"""
         pass
 
     @apply_activation_backward
     def backward_propogation(cls, output_error, learning_rate):
+        """:noindex:"""
         pass
 
 
 class Dense(Layer):
+    """The Dense layer class creates a layer that is fully connected with the previous
+    layer. This means that the number of weights will be MxN where M is number of
+    nodes in the previous layer and N = number of nodes in the current layer.
+    """
 
     def __init__(self, output_size, add_bias=False, activation=None, input_size=None):
         super().__init__(activation)
@@ -64,7 +74,7 @@ class Dense(Layer):
         """Initialize the weights for the layer based on input and output size
 
         Args:
-            input_size (np.array): dimensions for the input array
+            input_size (numpy array): dimensions for the input array
         """
         if self.input_size is None:
             self.input_size = input_size

@@ -1,10 +1,11 @@
 Layers
-===
+======================================================================
 
-.. autosummary::
-   :toctree: generated
+.. autoclass:: gwu_nn.layers.Layer
+   :members:
+   :inherited-members:
 
-   Layers
+.. autoclass:: gwu_nn.layers.Dense
+   :members:
+   :inherited-members:  
 
-.. automodule:: gwu_nn.layers
-	:members:

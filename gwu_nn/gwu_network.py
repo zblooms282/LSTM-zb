@@ -4,6 +4,8 @@ from gwu_nn.loss_functions import MSE, LogLoss, CrossEntropy
 loss_functions = {'mse': MSE, 'log_loss': LogLoss, 'cross_entropy': CrossEntropy}
 
 class GWUNetwork():
+    """The GWUNetwork class is the core class of the library that provies a
+    foundation to build a network by iteratively adding layers"""
 
     def __init__(self):
         self.layers = []
@@ -11,6 +13,12 @@ class GWUNetwork():
         self.loss_prime = None
 
     def add(self, layer):
+        """A network is comprised of a series of layers connected together. The
+        add method provides a means to add a layer to a network
+        
+        Args:
+            Layer (Layer): A Layer object to add to the network
+        """
         if len(self.layers) > 0:
             layer.init_weights(self.layers[-1].output_size)
         else:
@@ -21,6 +29,12 @@ class GWUNetwork():
         pass
 
     def compile(self, loss, lr):
+        """Compile sets a model's loss function and learning rate, preparing the
+        model for training
+        
+        Args:
+            loss (LossFunction): The loss function used for the network
+            lr (float): The learning rate for the network"""
         if isinstance(loss, str):
             layer_loss = loss_functions[loss]
         else:
@@ -31,6 +45,14 @@ class GWUNetwork():
 
     # predict output for given input
     def predict(self, input_data):
+        """Predict produces predictions for the provided input data
+        
+        Args:
+            input_data (np.array): Input data to inference
+        
+        Returns:
+            np.array: the predictions for the given model
+        """
         # sample dimension first
         samples = len(input_data)
         result = []
@@ -50,6 +72,13 @@ class GWUNetwork():
 
     # train the network
     def fit(self, x_train, y_train, epochs, batch_size=None):
+        """Fit is the trianing loop for the model/network
+        
+        Args:
+            x_train (np.array): Inputs for the network to train on
+            y_train (np.array): Expected outputs for the network
+            epochs (int): Number of training cycles to run through
+            batch_size (int): Number of records to train on at a time"""
         # sample dimension first
         samples = len(x_train)
 

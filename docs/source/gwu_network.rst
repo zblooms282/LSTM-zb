@@ -1,10 +1,6 @@
 GWU_Network
-===
+======================================================================
 
-.. autosummary::
-   :toctree: generated
-
-   GWU_Network
-
-.. automodule:: gwu_nn.gwu_network
-	:members:
+.. autoclass:: gwu_nn.gwu_network.GWUNetwork
+   :members:
+   :inherited-members:

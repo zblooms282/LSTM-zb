@@ -1,5 +1,5 @@
 Welcome to GWU Neural Network's documentation!
-===================================
+======================================================================
 
 **GWU_NN** is a Python library used at The George Washington University to expore how
 Neural Networks are implemented at a code level.
@@ -18,6 +18,7 @@ Contents
    :maxdepth: 2
    :caption: Contents:
 
+   usage
    gwu_network
    layers
    activation_layers
