@@ -4,12 +4,13 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='gwu_nn',
-      version='0.1',
+      version='0.1.1',
       description='Neural Network library for the George Washington University',
-      url='https://gitlab.com/gwu_intro_nn/gwu_nn',
+      url='https://gwu-nn.readthedocs.io/en/latest/index.html',
       author='Joel Klein',
       author_email='jdk51405@gmail.com',
       long_description=long_description,
+      long_description_content_type='text/markdown',
       license='MIT',
       classifiers=[
         "Programming Language :: Python :: 3.8",

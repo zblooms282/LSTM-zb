@@ -153,3 +153,5 @@ crashlytics.properties
 crashlytics-build.properties
 fabric.properties
 
+# Project
+pypi_deploy.txt
