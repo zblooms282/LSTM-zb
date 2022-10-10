@@ -1,10 +1,8 @@
 Welcome to Lumache's documentation!
 ===================================
 
-**Lumache** (/lu'make/) is a Python library for cooks and food lovers
-that creates recipes mixing random ingredients.
-It pulls data from the `Open Food Facts database <https://world.openfoodfacts.org/>`_
-and offers a *simple* and *intuitive* API.
+**GWU_NN** is a Python library used at The George Washington University to expore how
+Neural Networks are implemented at a code level.
 
 Check out the :doc:`usage` section for further information, including
 how to :ref:`installation` the project.
@@ -18,5 +16,16 @@ Contents
 
 .. toctree::
 
-   usage
-   api
+   gwu_network
+   layers
+   activation_layers
+   activation_functions
+   loss_functions
+
+
+Indices and tables
+==================
+
+* :ref:`genindex`
+* :ref:`modindex`
+* :ref:`search`

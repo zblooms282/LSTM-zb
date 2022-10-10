@@ -2,9 +2,9 @@
 
 # -- Project information
 
-project = 'Lumache'
-copyright = '2021, Graziella'
-author = 'Graziella'
+project = 'GWU_NN'
+copyright = '2020, Joel Klein'
+author = 'Joel Klein'
 
 release = '0.1'
 version = '0.1.0'

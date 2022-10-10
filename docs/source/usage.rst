@@ -6,13 +6,13 @@ Usage
 Installation
 ------------
 
-To use Lumache, first install it using pip:
+To use GWU_NN, first install it using pip:
 
 .. code-block:: console
 
-   (.venv) $ pip install lumache
+   (.venv) $ pip install gwu_nn
 
-Creating recipes
+Creating Networks
 ----------------
 
 To retrieve a list of random ingredients,
