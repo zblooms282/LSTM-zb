@@ -1,4 +1,4 @@
-Welcome to Lumache's documentation!
+Welcome to GWU Neural Network's documentation!
 ===================================
 
 **GWU_NN** is a Python library used at The George Washington University to expore how
@@ -15,6 +15,8 @@ Contents
 --------
 
 .. toctree::
+   :maxdepth: 2
+   :caption: Contents:
 
    gwu_network
    layers
