@@ -21,7 +21,10 @@ class GWUNetwork():
         pass
 
     def compile(self, loss, lr):
-        layer_loss = loss_functions[loss]
+        if isinstance(loss, str):
+            layer_loss = loss_functions[loss]
+        else:
+            layer_loss = loss
         self.loss = layer_loss.loss
         self.loss_prime = layer_loss.loss_partial_derivative
         self.learning_rate = lr
