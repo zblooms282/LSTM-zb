@@ -4,7 +4,7 @@ from sklearn import preprocessing
 from sklearn.model_selection import train_test_split
 
 import sys, os
-sys.path.insert(0, '..')
+sys.path.insert(0, os.getcwd())
 
 from gwu_nn.gwu_network import GWUNetwork
 from gwu_nn.layers import Dense
