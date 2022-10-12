@@ -10,7 +10,7 @@ from gwu_nn.layers import Dense
 from gwu_nn.activation_layers import Sigmoid
 
 
-class TestRegression(unittest.TestCase):
+class TestLogisticRegression(unittest.TestCase):
     
     def setUp(self):
         y_col = 'Survived'
@@ -44,6 +44,15 @@ class TestRegression(unittest.TestCase):
         input_size = self.X_train.shape[1]
         network = GWUNetwork()
         network.add(Dense(16, add_bias=False, activation='relu', input_size=input_size))
+        network.add(Dense(1, add_bias=False, activation='sigmoid'))
+        network.compile(loss='log_loss', lr=.01)
+        network.fit(self.X_train, self.y_train, batch_size=10, epochs=10)
+
+    def test_deep_training(self):
+        input_size = self.X_train.shape[1]
+        network = GWUNetwork()
+        network.add(Dense(16, add_bias=False, activation='relu', input_size=input_size))
+        network.add(Dense(8, add_bias=False, activation='relu'))
         network.add(Dense(1, add_bias=False, activation='sigmoid'))
         network.compile(loss='log_loss', lr=.01)
         network.fit(self.X_train, self.y_train, batch_size=10, epochs=10)

@@ -46,6 +46,7 @@ class MSE(LossFunction):
         Returns:
             np.array: MSE for each input
         """
+        y_pred = y_pred.reshape(-1)
         return np.mean(np.power(y_true - y_pred, 2))
 
     @classmethod
@@ -55,7 +56,10 @@ class MSE(LossFunction):
         Returns:
             np.array: Partial derivative of the MSE
         """
-        return 2 * (y_pred - y_true) / y_pred.size
+        y_pred = y_pred.reshape(-1)
+        grad = 2 * (y_pred - y_true) / y_pred.size
+        grad = grad.reshape(-1, 1)
+        return grad
 
 class LogLoss(LossFunction):
     """Class for implementing the LogLoss loss function. Inheirits
