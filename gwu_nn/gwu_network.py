@@ -61,22 +61,18 @@ class GWUNetwork():
         Returns:
             np.array: the predictions for the given model
         """
-        # sample dimension first
-        samples = len(input_data)
-        result = []
+        
+        # Run through the layers
+        output = input_data
+        for layer in self.layers:
+            output = layer.forward_propagation(output)
 
-        # run network over all samples
-        for i in range(samples):
-            # forward propagation
-            output = input_data[i]
-            for layer in self.layers:
-                output = layer.forward_propagation(output)
-            result.append(output)
-
-        return result
+        return output
 
     def evaluate(self, x, y):
-        pass
+        preds = self.predict(x)
+        loss = self.loss(y, preds)
+        return loss
 
     # train the network
     def fit(self, x_train, y_train, epochs, batch_size=None):
@@ -93,15 +89,17 @@ class GWUNetwork():
         # training loop
         for i in range(epochs):
             err = 0
-            for j in range(samples):
+            batch_count = 0
+            for j in range(0, len(x_train), batch_size):
                 # forward propagation
-                output = x_train[j].reshape(1, -1)
+                output = x_train[j:j+batch_size]
                 for layer in self.layers:
                     output = layer.forward_propagation(output)
 
                 # compute loss (for display purpose only)
-                y_true = np.array(y_train[j]).reshape(-1, 1)
+                y_true = y_train[j:j+batch_size]
                 err += self.loss(y_true, output)
+                batch_count += 1
 
                 # backward propagation
                 error = self.loss_prime(y_true, output)
@@ -109,9 +107,9 @@ class GWUNetwork():
                     error = layer.backward_propagation(error, self.learning_rate)
 
             # calculate average error on all samples
-            if i % 10 == 0:
-                err /= samples
-                print('epoch %d/%d   error=%f' % (i + 1, epochs, err))
+            if i % 10 == 0 and i != 0:
+                err /= batch_count
+                print(f'epoch {i}/{epochs}   error={err}')
                 
     def __repr__(self):
         rep = "Model:"
