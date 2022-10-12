@@ -4,7 +4,7 @@ with open("README.md", "r") as fh:
     long_description = fh.read()
 
 setup(name='gwu_nn',
-      version='0.1.3',
+      version='0.2.0',
       description='Neural Network library for the George Washington University',
       url='https://gwu-nn.readthedocs.io/en/latest/index.html',
       author='Joel Klein',

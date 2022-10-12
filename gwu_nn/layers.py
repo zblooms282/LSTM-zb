@@ -80,6 +80,8 @@ class Dense(Layer):
             self.input_size = input_size
 
         self.weights = np.random.randn(input_size, self.output_size) / np.sqrt(input_size + self.output_size)
+
+        # TODO: Batching of inputs has broken how bias works. Need to address in next iteration
         if self.add_bias:
             self.bias = np.random.randn(1, self.output_size) / np.sqrt(input_size + self.output_size)
 
