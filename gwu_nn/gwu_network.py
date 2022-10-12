@@ -23,7 +23,7 @@ class GWUNetwork():
             layer.init_weights(self.layers[-1].output_size)
         else:
             layer.init_weights(layer.input_size)
-        self.layers.append(layer)
+            self.layers.append(layer)
 
     def get_weights(self):
         """Get the weights for the model
